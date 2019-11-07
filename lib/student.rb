@@ -1,3 +1,5 @@
+require 'pry'
+
 class Student
   attr_accessor :id, :name, :grade
 
@@ -81,6 +83,7 @@ class Student
    DB[:conn].execute(sql).map do |row|
      self.new_from_db(row)
    end
+   binding.pry
   end
 
 
