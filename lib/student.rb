@@ -113,7 +113,7 @@ class Student
     sql = <<-SQL
      SELECT *
      FROM students
-     WHERE students.grade = {x}
+     WHERE students.grade = #{x}
     SQL
 
     DB[:conn].execute(sql).map do |row|
